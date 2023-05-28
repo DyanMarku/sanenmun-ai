@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>4x4 Grid</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/suns.png" />
+        <style>
+            .box {
+                width: 126.5px;
+                height: 127px;
+                border: 2px solid rgb(128, 128, 128);
+                text-align: center;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 500;
+                font-size: 90px;
+                text-transform: uppercase;
+                cursor: pointer;
+                z-index: 1;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div id='menu'>
+                <h3 id='decl'>Instructions</h3>
+                <p id="dec2">Welcome, this is a modified version of tic-tac-toe in which you are going to fight an AI
+                    that runs in negamax algorithm. Whenever you're ready, just click the "Let's Start" button to play.
+                    Good luck and have a nice game!</p><br><br><br>
+
+                
+                <div id='difficultySelector'>
+                    <div id='easy' class='button' onclick="selectD(0);" style="margin: 0 5px; width: 60px;">
+                        Easy
+                    </div>
+
+                    <div id='medium' class='button selected' onclick="selectD(1);" style="margin: 0 5px; width: 80px;">
+                        Medium
+                    </div>
+                    <div id='hard' class='button' onclick="selectD(2);" style="width: 60px;">
+                        Hard
+                    </div>
+                </div>
+
+                <div id='playerSelector'>
+                    <div id='o' class='button player selected' onclick="selectP(0);">
+                        ☀
+                    </div>
+
+                    <div id='x' class='button player' onclick="selectP(1);">
+                        ☾
+                    </div>
+                </div>
+
+
+                <div id='typeSelector' style="margin-top: 60px;">
+                    <div id='start' class='button player' onclick="selectT(1);" style="width: 100%;">
+                        <p style="padding-top: 7px;">Let's Start</p>
+                    </div>
+
+                    <div id='back' class='button player' onclick="window.location.href = 'index.html';"
+                        style="width: 100%;">
+                        <p style="padding-top: 5px;">Go Back</p>
+                    </div>
+
+                    <div class="grid-options" style="text-align: center;">
+                        <div id="grid" onclick="window.location.href = '3x3.html';"
+                            style="width: 100px; display: inline-block;">
+                            <button class="grid-button" style="margin-top: 20px; padding: 7px; width: 100px;">Try
+                                3x3</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>4x4 Grid</h2>
+
+            <table>
+                <tr>
+                    <td class='box' id='0' onclick="make(0);"></td>
+                    <td class='box' id='1' onclick="make(1);"></td>
+                    <td class='box' id='2' onclick="make(2);"></td>
+                    <td class='box' id='9' onclick="make(9);"></td>
+                </tr>
+                <tr>
+                    <td class='box' id='3' onclick="make(3);"></td>
+                    <td class='box' id='4' onclick="make(4);"></td>
+                    <td class='box' id='5' onclick="make(5);"></td>
+                    <td class='box' id='10' onclick="make(10);"></td>
+                </tr>
+                <tr>
+                    <td class='box' id='6' onclick="make(6);"></td>
+                    <td class='box' id='7' onclick="make(7);"></td>
+                    <td class='box' id='8' onclick="make(8);"></td>
+                    <td class='box' id='11' onclick="make(11);"></td>
+                </tr>
+                <tr>
+                    <td class='box' id='12' onclick="make(12);"></td>
+                    <td class='box' id='13' onclick="make(13);"></td>
+                    <td class='box' id='14' onclick="make(14);"></td>
+                    <td class='box' id='15' onclick="make(15);"></td>
+                </tr>
+            </table>
+
+            <div id='scoreTracker'>
+                <div class='score' id='cwins'><span>AI Wins</span><br>0</div>
+                <div class='score' id='ties'><span>Ties</span><br>0</div>
+                <div class='score' id='pwins'><span>Player Wins</span><br>0</div>
+            </div>
+
+            <script src="engine-4x4.js"></script>
+            <script src="interface-4x4.js"></script>
+
+        </div>
+
+
+    </body>
+
+</html>
